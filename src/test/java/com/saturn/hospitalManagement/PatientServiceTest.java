@@ -1,5 +1,7 @@
 package com.saturn.hospitalManagement;
 
+import com.saturn.hospitalManagement.dto.CPatientInfo;
+import com.saturn.hospitalManagement.dto.IPatientInfo;
 import com.saturn.hospitalManagement.entity.Patient;
 import com.saturn.hospitalManagement.repository.PatientRepo;
 import org.junit.jupiter.api.Test;
@@ -17,7 +19,27 @@ public class PatientServiceTest {
     @Test
     public void testPatient(){
         List<Patient> patients = patientRepo.findAll();
-        System.out.println(patients);
+        for(Patient p : patients){
+            System.out.println(p);
+        }
 
     }
+
+    @Test
+    public void testPatient2(){
+        List<IPatientInfo> patientInfos = patientRepo.getPatientInfo();
+        for(IPatientInfo p: patientInfos){
+            System.out.println(p);
+        }
+    }
+
+    @Test
+    public void testPatient3(){
+        List<CPatientInfo> patientInfos = patientRepo.getAllPatients();
+        for(CPatientInfo p: patientInfos){
+            System.out.println(p);
+        }
+    }
+
+
 }

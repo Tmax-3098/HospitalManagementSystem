@@ -1,5 +1,6 @@
 package com.saturn.hospitalManagement;
 
+import com.saturn.hospitalManagement.dto.BloodGroupStats;
 import com.saturn.hospitalManagement.dto.CPatientInfo;
 import com.saturn.hospitalManagement.dto.IPatientInfo;
 import com.saturn.hospitalManagement.entity.Patient;
@@ -39,6 +40,20 @@ public class PatientServiceTest {
         for(CPatientInfo p: patientInfos){
             System.out.println(p);
         }
+    }
+
+    @Test
+    public void testPatient4(){
+        List<BloodGroupStats> bloodInfo = patientRepo.getBloodGroupStats();
+        for(BloodGroupStats stat: bloodInfo){
+            System.out.println(stat);
+        }
+    }
+
+    @Test
+    public void testPatient5(){
+        int rowsModified = patientRepo.updatePatientById("max verstappen", 1L);
+        System.out.println(rowsModified);
     }
 
 

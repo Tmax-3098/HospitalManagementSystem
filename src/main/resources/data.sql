@@ -9,3 +9,14 @@ INSERT INTO patient (name, gender, birth_date, email, blood_group) VALUES
 ('Stephen Strange', 'Male', '1975-02-18', 'stephen.strange@avengers.com', 'B_NEGATIVE'),
 ('TChalla', 'Male', '1980-03-01', 'tchalla@wakanda.gov', 'AB_NEGATIVE'),
 ('Carol Danvers', 'Female', '1987-06-17', 'carol.danvers@avengers.com', 'A_POSITIVE');
+
+
+INSERT INTO doctor (name, specialization, email) VALUES
+('Dr. Shaun Murphy', 'Surgical Resident', 'shaun.murphy@stbonaventure.com'),
+('Dr. Aaron Glassman', 'Neurosurgery', 'aaron.glassman@stbonaventure.com'),
+('Dr. Claire Browne', 'Emergency Medicine', 'claire.browne@stbonaventure.com'),
+('Dr. Neil Melendez', 'Cardiothoracic Surgery', 'neil.melendez@stbonaventure.com'),
+('Dr. Morgan Reznick', 'Internal Medicine', 'morgan.reznick@stbonaventure.com'),
+('Dr. Alex Park', 'Pediatric Surgery', 'alex.park@stbonaventure.com'),
+('Dr. Audrey Lim', 'Chief of Surgery', 'audrey.lim@stbonaventure.com'),
+('Dr. Marcus Andrews', 'Plastic Surgery', 'marcus.andrews@stbonaventure.com');

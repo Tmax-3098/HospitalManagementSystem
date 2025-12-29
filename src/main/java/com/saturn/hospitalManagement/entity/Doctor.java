@@ -1,45 +1,45 @@
 package com.saturn.hospitalManagement.entity;
 
-import com.saturn.hospitalManagement.entity.type.BloodGroupType;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 import org.hibernate.annotations.CreationTimestamp;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
-@ToString
 @Getter
 @Setter
-public class Patient {
+@AllArgsConstructor
+@NoArgsConstructor
+public class Doctor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false)
     private String name;
 
-    private LocalDate birthDate;
+    @Column(nullable = false)
+    private String specialization;
 
+    @Column(nullable = false)
     private String email;
-
-    private String gender;
-
-    @Enumerated(EnumType.STRING)
-    private BloodGroupType bloodGroup;
 
     @CreationTimestamp
     private LocalDateTime createdAt;
 
-    @OneToOne
-    @JoinColumn(name = "patient_insurance")
-    private Insurance insurance; //owning
+    @OneToMany(mappedBy = "doctor")
+    private Set<Appointment> appointment = new HashSet<>();
 
-    @OneToMany(mappedBy = "patient")
-    private Set<Appointment> appointments = new HashSet<>();
+    @OneToOne(mappedBy = "headDoc")
+    private Department department;
+
+
 }

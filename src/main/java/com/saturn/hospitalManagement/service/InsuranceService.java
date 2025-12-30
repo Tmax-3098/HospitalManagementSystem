@@ -25,6 +25,22 @@ public class InsuranceService {
         return insurance;
     }
 
+    @Transactional
+    public Insurance updateInsurance(Insurance insurance, Long pId){
+        Patient patient = patientRepo.findById(pId).orElseThrow();
+        patient.setInsurance(insurance);
+        //insurance.setPatient(patient);
+        return insurance;
+    }
+
+    @Transactional
+    public Patient removeInsurance( Long pId){
+        Patient patient = patientRepo.findById(pId).orElseThrow();
+        patient.setInsurance(null);
+        //insurance.setPatient(patient);
+        return patient;
+    }
+
 
 
 
